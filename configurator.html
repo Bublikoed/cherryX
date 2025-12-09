@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конфігуратор - CherryX</title>
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link rel="stylesheet" href="src/css/configurator.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Конфігуратор CherryX</h1>
+      <p>Крок <span id="current-step">1</span> з <span id="total-steps">9</span></p>
+    </header>
+
+    <main>
+      <div class="configurator-container">
+        <!-- Progress bar -->
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <!-- Steps container -->
+        <div class="steps-container">
+          <!-- Step 1 -->
+          <div class="step active" data-step="1">
+            <h2>Крок 1: Вибір типу продукту</h2>
+          
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step" data-step="2">
+            <h2>Крок 2: Вибір функцій</h2>
+          
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step" data-step="3">
+            <h2>Крок 3: Вибір інтеграцій</h2>
+          
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step" data-step="4">
+            <h2>Крок 4: Налаштування безпеки</h2>
+           
+          </div>
+
+          <!-- Step 5 -->
+          <div class="step" data-step="5">
+            <h2>Крок 5: Вибір сховища даних</h2>
+          
+          </div>
+
+          <!-- Step 6 -->
+          <div class="step" data-step="6">
+            <h2>Крок 6: Налаштування користувачів</h2>
+           
+          </div>
+
+          <!-- Step 7 -->
+          <div class="step" data-step="7">
+            <h2>Крок 7: Вибір мови інтерфейсу</h2>
+           
+          </div>
+
+          <!-- Step 8 -->
+          <div class="step" data-step="8">
+            <h2>Крок 8: Додаткові опції</h2>
+           
+          </div>
+
+          <!-- Step 9 -->
+          <div class="step" data-step="9">
+            <h2>Крок 9: Контактна інформація</h2>
+          
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="navigation-buttons">
+          <button class="btn btn-secondary" id="prev-btn" disabled>Назад</button>
+          <button class="btn btn-primary" id="next-btn">Вперед</button>
+          <button class="btn btn-success" id="submit-btn" style="display: none;">Завершити</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 CherryX. Всі права захищені.</p>
+    </footer>
+
+    <script src="src/js/configurator.js"></script>
+  </body>
+</html>
+
