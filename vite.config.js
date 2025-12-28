@@ -23,7 +23,8 @@ export default defineConfig({
     minify: 'terser',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html')
+        main: resolve(__dirname, 'index.html'),
+        configurator: resolve(__dirname, 'configurator.html')
       },
       output: {
         // Організація вихідних файлів

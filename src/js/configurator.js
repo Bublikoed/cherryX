@@ -1,5 +1,11 @@
 // Конфігуратор - навігація між степами
 document.addEventListener('DOMContentLoaded', function() {
+    // Визначаємо базовий шлях до зображень (для dev і білду)
+    // В dev режимі (Vite server на порту 3000) файли в src/, в білді - в dist/
+    const isDev = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && 
+                  window.location.port === '3000';
+    const IMAGE_BASE_PATH = isDev ? 'src/images/configurator' : './images/configurator';
+    
     const totalSteps = 9; // 1 (вибір стилю) + 8 (кроки гілки)
     let currentStep = 1;
     let selectedBranch = null; // 'real' або 'anime'
@@ -215,13 +221,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Для real: більшість файлів .jpg, але Indian.png
                         const ethnicityName = ethnicity.charAt(0).toUpperCase() + ethnicity.slice(1);
                         const fileExtension = ethnicity === 'indian' ? 'png' : 'jpg';
-                        image.src = `src/images/configurator/step2/${selectedBranch}/${ethnicityName}.${fileExtension}`;
+                        image.src = `${IMAGE_BASE_PATH}/step2/${selectedBranch}/${ethnicityName}.${fileExtension}`;
                         card.style.display = 'block';
                     } else {
                         // Для anime: використовуємо мапінг з хешами
                         const fileName = animeFileMap[ethnicity];
                         if (fileName) {
-                            image.src = `src/images/configurator/step2/${selectedBranch}/${fileName}`;
+                            image.src = `${IMAGE_BASE_PATH}/step2/${selectedBranch}/${fileName}`;
                             card.style.display = 'block';
                         } else {
                             card.style.display = 'none';
@@ -249,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Для real: використовуємо мапінг з хешами
                         const fileName = realHairstyleFileMap[hairstyle];
                         if (fileName) {
-                            image.src = `src/images/configurator/step3/${selectedBranch}/${fileName}`;
+                            image.src = `${IMAGE_BASE_PATH}/step3/${selectedBranch}/${fileName}`;
                             card.style.display = 'block';
                         } else {
                             card.style.display = 'none';
@@ -258,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Для anime: використовуємо мапінг з хешами
                         const fileName = animeHairstyleFileMap[hairstyle];
                         if (fileName) {
-                            image.src = `src/images/configurator/step3/${selectedBranch}/${fileName}`;
+                            image.src = `${IMAGE_BASE_PATH}/step3/${selectedBranch}/${fileName}`;
                             card.style.display = 'block';
                         } else {
                             card.style.display = 'none';
@@ -652,7 +658,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                         
                         if (fileName) {
-                            image.src = `src/images/configurator/step4/block${blockNum}/${selectedBranch}/${fileName}`;
+                            image.src = `${IMAGE_BASE_PATH}/step4/block${blockNum}/${selectedBranch}/${fileName}`;
                             card.style.display = 'block';
                         } else {
                             card.style.display = 'none';

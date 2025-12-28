@@ -5,6 +5,14 @@
   padding: 0 20px;
 }
 
+
+header a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
 /* Top Navigation Bar */
 .top-navigation {
   display: flex;
@@ -137,16 +145,16 @@
   cursor: not-allowed;
 }
 
-.btn-primary {
+.configurator-container .btn-primary {
   background: rgb(171 5 67);
   color: white;
 }
 
-.btn-primary:hover:not(:disabled) {
+.configurator-container .btn-primary:hover:not(:disabled) {
   background: rgb(171 5 67);
 }
 
-.btn-primary:disabled {
+.configurator-container .btn-primary:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
