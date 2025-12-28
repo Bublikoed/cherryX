@@ -206,8 +206,7 @@ footer {
     text-align: center;
     padding: 32px 16px;
     position: relative;
-    background: radial-gradient(ellipse at top right, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(138, 43, 226, 0.15) 0%, transparent 50%);
+    background-image: none;
 }
 
 .promo-heading {
@@ -487,8 +486,7 @@ footer {
     padding: 48px 16px;
     text-align: center;
     position: relative;
-    background: radial-gradient(ellipse at top left, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
+    background-image: none;
 }
 
 .why-cherryx-title {
@@ -558,7 +556,7 @@ footer {
     padding: 48px 16px;
     text-align: center;
     position: relative;
-    background: radial-gradient(ellipse at top right, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
+    background-image: none;
 }
 
 .testimonials-title {
@@ -634,8 +632,7 @@ footer {
     padding: 48px 16px;
     text-align: center;
     position: relative;
-    background: radial-gradient(ellipse at top left, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+    background-image: none;
 }
 
 .why-different-title {
@@ -775,8 +772,7 @@ footer {
     padding: 48px 16px;
     text-align: center;
     position: relative;
-    background: radial-gradient(ellipse at top right, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom left, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+    background-image: none;
 }
 
 .privacy-title {
@@ -887,8 +883,7 @@ footer {
     padding: 48px 16px;
     text-align: center;
     position: relative;
-    background: radial-gradient(ellipse at top left, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+    background-image: none;
 }
 
 .faq-title {
@@ -1234,5 +1229,204 @@ a.btn-primary {
     
     .faq-answer p {
         font-size: 13px;
+    }
+}
+
+/* Dream AI Promo Block */
+.dream-ai-block {
+    width: 100%;
+    padding: 48px 24px;
+    text-align: center;
+    background: none;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+.dream-ai-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    line-height: 1.2;
+}
+
+.dream-highlight {
+    color: #F73D86;
+}
+
+.dream-ai-description {
+    font-size: 16px;
+    color: #B0B0B0;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+.limited-offer-banner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #4A282D;
+    border: 1px solid #E55F4D;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.clock-icon {
+    width: 16px;
+    height: 16px;
+    color: #E55F4D;
+    flex-shrink: 0;
+}
+
+.limited-offer-banner span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.dream-ai-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-dream-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 12px;
+    background: linear-gradient(to right, #F73D86, #FF8C42);
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(247, 61, 134, 0.4);
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-dream-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(247, 61, 134, 0.6);
+}
+
+.btn-dream-secondary {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 12px;
+    background: #282828;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-dream-secondary:hover {
+    background: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dream-trust-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #A0A0A0;
+    font-size: 14px;
+}
+
+.trust-icon {
+    width: 16px;
+    height: 16px;
+    color: #A0A0A0;
+    flex-shrink: 0;
+}
+
+/* Responsive для Dream AI Block */
+@media (max-width: 640px) {
+    .dream-ai-block {
+        padding: 32px 16px;
+    }
+    
+    .dream-ai-title {
+        font-size: 24px;
+    }
+    
+    .dream-ai-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .limited-offer-banner {
+        padding: 8px 16px;
+        margin-bottom: 24px;
+    }
+    
+    .limited-offer-banner span {
+        font-size: 12px;
+    }
+    
+    .clock-icon {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .dream-ai-buttons {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+    
+    .btn-dream-primary,
+    .btn-dream-secondary {
+        font-size: 16px;
+        padding: 14px 32px;
+    }
+    
+    .dream-trust-indicators {
+        gap: 16px;
+    }
+    
+    .trust-item {
+        font-size: 12px;
+    }
+    
+    .trust-icon {
+        width: 14px;
+        height: 14px;
     }
 }

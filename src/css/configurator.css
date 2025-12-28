@@ -1,0 +1,910 @@
+.configurator-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top Navigation Bar */
+.top-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.nav-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-arrow-right {
+  background: linear-gradient(90deg, #ff8c00, rgb(171 5 67));
+  color: white;
+}
+
+.nav-arrow-right:hover:not(:disabled) {
+  background: linear-gradient(90deg, #ff9900, #ff0066);
+  transform: scale(1.05);
+}
+
+.nav-title-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-step-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-step-counter {
+  color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Steps container */
+.steps-container {
+  position: relative;
+  min-height: 400px;
+}
+
+/* Steps - приховуємо всі за замовчуванням */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: rgb(171 5 67);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Navigation buttons */
+.navigation-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: space-between;
+}
+
+.navigation-buttons .btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary {
+  background: #1a1a1a;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #2a2a2a;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: rgb(171 5 67);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: rgb(171 5 67);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navigation-buttons .btn-success {
+  background: rgb(171 5 67);
+  color: #fff;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.navigation-buttons .btn-success:hover {
+  background: rgb(171 5 67);
+}
+
+.navigation-buttons .btn-success span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Step 1 - Style Cards */
+.step h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.style-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.style-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  aspect-ratio: 2/3;
+  background: #1a1a1a;
+}
+
+.style-card.active {
+  border-color: rgb(171 5 67);
+}
+
+.style-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.style-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Step 2 - Ethnicity Cards */
+.ethnicity-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.ethnicity-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  aspect-ratio: 2/3;
+  background: #1a1a1a;
+}
+
+.ethnicity-card.active {
+  border-color: rgb(171 5 67);
+}
+
+.ethnicity-card-checkbox {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.ethnicity-card.active .ethnicity-card-checkbox {
+  background: rgb(171 5 67);
+  border-color: rgb(171 5 67);
+}
+
+.ethnicity-card.active .ethnicity-card-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.ethnicity-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ethnicity-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Selection Groups */
+.selection-group {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.selection-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Age Buttons */
+.age-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.age-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 24px;
+  background: #414141;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.age-btn:hover {
+  background: #2a2a2a;
+}
+
+.age-btn.active {
+  background: white;
+  color: #8b0000;
+}
+
+/* Eyes Buttons */
+.eyes-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.eyes-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px;
+  border: none;
+  border-radius: 12px;
+  background: #4a4a4a;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.eyes-btn:hover {
+  background: #2a2a2a;
+}
+
+.eyes-btn.active {
+  background: white;
+  color: #8b0000;
+}
+
+.eyes-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Hair Color Buttons */
+.hair-color-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hair-color-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px;
+  border: none;
+  border-radius: 24px;
+  background: #4a4a4a;
+  color: #AAAAAA;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.hair-color-btn:hover {
+  background: #2a2a2a;
+}
+
+.hair-color-btn.active {
+  background: white;
+  color: #8b0000;
+}
+
+.hair-color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: block;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.hair-color-btn.active .hair-color-swatch {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Card Blocks for Step 4 */
+.card-block {
+  margin-bottom: 32px;
+}
+
+.block-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Personality Cards for Step 5 */
+.personality-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.personality-card {
+  position: relative;
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
+}
+
+.personality-card:hover {
+  border-color: #3a3a3a;
+  background: #222222;
+}
+
+.personality-card.active {
+  border-color: rgb(171 5 67);
+  background: #2a1a22;
+}
+
+.personality-checkbox {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.personality-card.active .personality-checkbox {
+  background: rgb(171 5 67);
+  border-color: rgb(171 5 67);
+}
+
+.personality-card.active .personality-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.personality-emoji {
+  font-size: 32px;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.personality-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.personality-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.personality-description {
+  color: #AAAAAA;
+  font-size: 12px;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Occupation Tags for Step 6 */
+.occupation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.occupation-tag {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 24px;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.occupation-tag:hover {
+  background: #3a3a3a;
+}
+
+.occupation-tag.active {
+  background: white;
+  color: #8b0000;
+}
+
+/* Hobbies Block for Step 6 */
+.hobbies-block {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.hobbies-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.hobbies-instruction {
+  color: #AAAAAA;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hobby-tag {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 24px;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hobby-tag:hover {
+  background: #3a3a3a;
+}
+
+.hobby-tag.active {
+  background: white;
+  color: #8b0000;
+}
+
+.hobby-checkbox {
+  flex-shrink: 0;
+  color: currentColor;
+  transition: all 0.3s ease;
+}
+
+.hobby-tag.active .hobby-checkbox {
+  color: #8b0000;
+}
+
+.hobby-tag.active .hobby-checkbox rect {
+  fill: #8b0000;
+  stroke: #8b0000;
+}
+
+.hobby-tag.active .hobby-checkbox .checkmark {
+  opacity: 1;
+}
+
+.hobby-tag.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Outfit Tags for Step 7 */
+.outfit-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.outfit-tag {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 24px;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.outfit-tag:hover {
+  background: #3a3a3a;
+}
+
+.outfit-tag.active {
+  background: white;
+  color: #8b0000;
+}
+
+/* Relationship Cards for Step 8 */
+.relationship-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.relationship-card {
+  position: relative;
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.relationship-card:hover {
+  border-color: #3a3a3a;
+  background: #222222;
+}
+
+.relationship-card.active {
+  border-color: rgb(171 5 67);
+  background: #2a1a22;
+}
+
+.relationship-checkbox {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.relationship-card.active .relationship-checkbox {
+  background: rgb(171 5 67);
+  border-color: rgb(171 5 67);
+}
+
+.relationship-card.active .relationship-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.relationship-emoji {
+  font-size: 40px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.relationship-label {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Summary for Step 9 */
+.summary-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-section-full {
+  grid-column: span 2;
+}
+
+.summary-category {
+  color: #AAAAAA;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-card {
+  position: relative;
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 8px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.summary-card-eyes {
+  justify-content: center;
+  gap: 8px;
+}
+
+.summary-card:hover {
+  border-color: rgb(171 5 67);
+  background: #2a1a22;
+}
+
+.summary-edit-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover .summary-edit-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.summary-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: none;
+}
+
+.summary-image-small {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: none;
+  flex-shrink: 0;
+}
+
+.summary-video {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.summary-emoji {
+  font-size: 32px;
+  margin-bottom: 8px;
+  line-height: 1;
+  display: none;
+}
+
+.summary-color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: none;
+}
+
+.summary-value {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.summary-tags-container {
+  position: relative;
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.summary-tags-container:hover {
+  border-color: rgb(171 5 67);
+  background: #2a1a22;
+}
+
+.summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.summary-tag {
+  padding: 6px 12px;
+  background: #2a2a2a;
+  border-radius: 16px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}

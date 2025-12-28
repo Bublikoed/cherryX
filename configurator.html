@@ -9,12 +9,31 @@
   </head>
   <body>
     <header>
-      <h1>Конфігуратор CherryX</h1>
-      <p>Крок <span id="current-step">1</span> з <span id="total-steps">9</span></p>
+      <img src="src/images/prelending/logo.png" alt="CherryX" class="logo">
+      <h1>Cherry<span>X</span></h1>
+      <div class="h-px"></div>
     </header>
 
     <main>
       <div class="configurator-container">
+        <!-- Top Navigation Bar -->
+        <div class="top-navigation">
+          <button class="nav-arrow nav-arrow-left" id="top-prev-btn" aria-label="Previous step">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-title-container">
+            <h2 class="nav-step-title" id="nav-step-title">Choose Style</h2>
+            <span class="nav-step-counter" id="nav-step-counter">1/9</span>
+          </div>
+          <button class="nav-arrow nav-arrow-right" id="top-next-btn" aria-label="Next step">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
         <!-- Progress bar -->
         <div class="progress-bar">
           <div class="progress-fill" id="progress-fill"></div>
@@ -22,72 +41,1607 @@
 
         <!-- Steps container -->
         <div class="steps-container">
-          <!-- Step 1 -->
-          <div class="step active" data-step="1">
-            <h2>Крок 1: Вибір типу продукту</h2>
-          
+          <!-- Step 1: Style Selection -->
+          <div class="step active" data-step="1" data-branch="common">
+            <h2>Choose Style</h2>
+            <div class="style-cards">
+              <div class="style-card active" data-style="real">
+                <video autoplay loop muted playsinline>
+                  <source src="src/images/configurator/step1/real.mp4" type="video/mp4">
+                </video>
+                <div class="style-card-label">Real</div>
+              </div>
+              <div class="style-card" data-style="anime">
+                <video autoplay loop muted playsinline>
+                  <source src="src/images/configurator/step1/anime.mp4" type="video/mp4">
+                </video>
+                <div class="style-card-label">Anime</div>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="step" data-step="2">
-            <h2>Крок 2: Вибір функцій</h2>
-          
+          <!-- Real Branch Steps (2-9) -->
+          <div class="step" data-step="2" data-branch="real">
+            <h2>Choose Ethnicity</h2>
+            <div class="ethnicity-cards" data-branch="real">
+              <div class="ethnicity-card" data-ethnicity="european">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="European" class="ethnicity-image">
+                <div class="ethnicity-label">European</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="latin">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Latin" class="ethnicity-image">
+                <div class="ethnicity-label">Latin</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="asian">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Asian" class="ethnicity-image">
+                <div class="ethnicity-label">Asian</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="arab">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Arab" class="ethnicity-image">
+                <div class="ethnicity-label">Arab</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="afro">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Afro" class="ethnicity-image">
+                <div class="ethnicity-label">Afro</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="indian">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Indian" class="ethnicity-image">
+                <div class="ethnicity-label">Indian</div>
+              </div>
+            </div>
+
+            <!-- Choose Age -->
+            <div class="selection-group">
+              <h3 class="selection-title">Choose Age</h3>
+              <div class="age-buttons">
+                <button class="age-btn" data-age="18-20">18-20</button>
+                <button class="age-btn" data-age="20-30">20-30</button>
+                <button class="age-btn" data-age="30-40">30-40</button>
+                <button class="age-btn" data-age="40-50">40-50</button>
+              </div>
+            </div>
+
+            <!-- Choose Eyes Color -->
+            <div class="selection-group">
+              <h3 class="selection-title">Choose Eyes Color</h3>
+              <div class="eyes-buttons">
+                <button class="eyes-btn" data-eyes="brown">
+                  <img src="src/images/configurator/step2/eye_brown.b32db38c228bf33e522a.png" alt="Brown" class="eyes-icon">
+                  <span>Brown</span>
+                </button>
+                <button class="eyes-btn" data-eyes="blue">
+                  <img src="src/images/configurator/step2/eye_blue.7fb4eea3244b29a3ce17.png" alt="Blue" class="eyes-icon">
+                  <span>Blue</span>
+                </button>
+                <button class="eyes-btn" data-eyes="green">
+                  <img src="src/images/configurator/step2/eye_green.c1a40762110a4113c764.png" alt="Green" class="eyes-icon">
+                  <span>Green</span>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="step" data-step="3">
-            <h2>Крок 3: Вибір інтеграцій</h2>
-          
+          <div class="step" data-step="3" data-branch="real">
+            <h2>Choose Hairstyle</h2>
+            <div class="ethnicity-cards" data-branch="real">
+              <div class="ethnicity-card" data-hairstyle="bangs">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Bangs" class="ethnicity-image">
+                <div class="ethnicity-label">Bangs</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="braids">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Braids" class="ethnicity-image">
+                <div class="ethnicity-label">Braids</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="bun">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Bun" class="ethnicity-image">
+                <div class="ethnicity-label">Bun</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="curly">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Curly" class="ethnicity-image">
+                <div class="ethnicity-label">Curly</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="long">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Long" class="ethnicity-image">
+                <div class="ethnicity-label">Long</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="ponytail">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Ponytail" class="ethnicity-image">
+                <div class="ethnicity-label">Ponytail</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="short">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Short" class="ethnicity-image">
+                <div class="ethnicity-label">Short</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="straight">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Straight" class="ethnicity-image">
+                <div class="ethnicity-label">Straight</div>
+              </div>
+            </div>
+
+            <!-- Choose Hair Color -->
+            <div class="selection-group">
+              <h3 class="selection-title">Choose Hair Color</h3>
+              <div class="hair-color-buttons">
+                <button class="hair-color-btn" data-hair-color="blond">
+                  <span class="hair-color-swatch" style="background-color: #E8E3D7;"></span>
+                  <span>Blond</span>
+                </button>
+                <button class="hair-color-btn" data-hair-color="brunette">
+                  <span class="hair-color-swatch" style="background-color: #7A4A3B;"></span>
+                  <span>Brunette</span>
+                </button>
+                <button class="hair-color-btn" data-hair-color="black">
+                  <span class="hair-color-swatch" style="background-color: #000000;"></span>
+                  <span>Black</span>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 4 -->
-          <div class="step" data-step="4">
-            <h2>Крок 4: Налаштування безпеки</h2>
-           
+          <div class="step" data-step="4" data-branch="real">
+            <!-- Block 1: Body Type -->
+            <div class="card-block">
+              <h3 class="block-title">Choose Body Type</h3>
+              <div class="ethnicity-cards" data-block="1">
+                <div class="ethnicity-card" data-block="1" data-option="athletic">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Athletic" class="ethnicity-image">
+                  <div class="ethnicity-label">Athletic</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="curvy">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Curvy" class="ethnicity-image">
+                  <div class="ethnicity-label">Curvy</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="muscular">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Muscular" class="ethnicity-image">
+                  <div class="ethnicity-label">Muscular</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="petite">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Petite" class="ethnicity-image">
+                  <div class="ethnicity-label">Petite</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="slim">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Slim" class="ethnicity-image">
+                  <div class="ethnicity-label">Slim</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="voluptuous">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Voluptuous" class="ethnicity-image">
+                  <div class="ethnicity-label">Voluptuous</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="card-block">
+              <h3 class="block-title">Choose Breast Size</h3>
+              <div class="ethnicity-cards" data-block="2">
+                <div class="ethnicity-card" data-block="2" data-option="flat">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Flat" class="ethnicity-image">
+                  <div class="ethnicity-label">Flat</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="small">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Small" class="ethnicity-image">
+                  <div class="ethnicity-label">Small</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="medium">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Medium" class="ethnicity-image">
+                  <div class="ethnicity-label">Medium</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="large">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Large" class="ethnicity-image">
+                  <div class="ethnicity-label">Large</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="huge">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Huge" class="ethnicity-image">
+                  <div class="ethnicity-label">Huge</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="card-block">
+              <h3 class="block-title">Choose Butt Type</h3>
+              <div class="ethnicity-cards" data-block="3">
+                <div class="ethnicity-card" data-block="3" data-option="skinny">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Skinny" class="ethnicity-image">
+                  <div class="ethnicity-label">Skinny</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="small">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Small" class="ethnicity-image">
+                  <div class="ethnicity-label">Small</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="medium">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Medium" class="ethnicity-image">
+                  <div class="ethnicity-label">Medium</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="athletic">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Athletic" class="ethnicity-image">
+                  <div class="ethnicity-label">Athletic</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="huge">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Huge" class="ethnicity-image">
+                  <div class="ethnicity-label">Huge</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 5 -->
-          <div class="step" data-step="5">
-            <h2>Крок 5: Вибір сховища даних</h2>
-          
+          <div class="step" data-step="5" data-branch="real">
+            <h2>Choose Personality</h2>
+            <div class="personality-cards">
+              <div class="personality-card" data-personality="caregiver">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">👩‍🦳</div>
+                <div class="personality-content">
+                  <div class="personality-title">Caregiver</div>
+                  <div class="personality-description">Nurturing, protective, and always there to offer comfort.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="innocent">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">😇</div>
+                <div class="personality-content">
+                  <div class="personality-title">Innocent</div>
+                  <div class="personality-description">Pure, naive, and full of wonder and optimism.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="temptress">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">💘</div>
+                <div class="personality-content">
+                  <div class="personality-title">Temptress</div>
+                  <div class="personality-description">Seductive, alluring, and irresistibly charming.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="submissive">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🥺</div>
+                <div class="personality-content">
+                  <div class="personality-title">Submissive</div>
+                  <div class="personality-description">Obedient, yielding, and eager to please.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="nympho">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🔥</div>
+                <div class="personality-content">
+                  <div class="personality-title">Nympho</div>
+                  <div class="personality-description">Passionate, insatiable, and driven by desire.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="confidant">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">😎</div>
+                <div class="personality-content">
+                  <div class="personality-title">Confidant</div>
+                  <div class="personality-description">Trustworthy, loyal, and a perfect secret keeper.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="sage">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🧠</div>
+                <div class="personality-content">
+                  <div class="personality-title">Sage</div>
+                  <div class="personality-description">Wise, thoughtful, and always seeking knowledge.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="jester">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🤡</div>
+                <div class="personality-content">
+                  <div class="personality-title">Jester</div>
+                  <div class="personality-description">Playful, humorous, and always ready to entertain.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="dominant">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">👑</div>
+                <div class="personality-content">
+                  <div class="personality-title">Dominant</div>
+                  <div class="personality-description">Commanding, assertive, and in control.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="lover">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">💕</div>
+                <div class="personality-content">
+                  <div class="personality-title">Lover</div>
+                  <div class="personality-description">Romantic, affectionate, and deeply emotional.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="mean">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">❄️</div>
+                <div class="personality-content">
+                  <div class="personality-title">Mean</div>
+                  <div class="personality-description">Cold, harsh, and unapologetically direct.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="experimenter">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">💡</div>
+                <div class="personality-content">
+                  <div class="personality-title">Experimenter</div>
+                  <div class="personality-description">Curious, innovative, and always trying something new.</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 6 -->
-          <div class="step" data-step="6">
-            <h2>Крок 6: Налаштування користувачів</h2>
-           
+          <div class="step" data-step="6" data-branch="real">
+            <h2>Choose Occupation</h2>
+            <div class="occupation-tags">
+              <button class="occupation-tag" data-occupation="massage-therapist">Massage therapist</button>
+              <button class="occupation-tag" data-occupation="dentist">Dentist</button>
+              <button class="occupation-tag" data-occupation="fitness-trainer">Fitness trainer</button>
+              <button class="occupation-tag" data-occupation="pharmacist">Pharmacist</button>
+              <button class="occupation-tag" data-occupation="hairdresser">Hairdresser</button>
+              <button class="occupation-tag" data-occupation="makeup-artist">Makeup artist</button>
+              <button class="occupation-tag" data-occupation="gynecologist">Gynecologist</button>
+              <button class="occupation-tag" data-occupation="librarian">Librarian</button>
+              <button class="occupation-tag" data-occupation="secretary">Secretary</button>
+              <button class="occupation-tag" data-occupation="fashion-designer">Fashion designer</button>
+              <button class="occupation-tag" data-occupation="interior-designer">Interior designer</button>
+              <button class="occupation-tag" data-occupation="chef">Chef</button>
+              <button class="occupation-tag" data-occupation="designer">Designer</button>
+              <button class="occupation-tag" data-occupation="stylist">Stylist</button>
+              <button class="occupation-tag" data-occupation="aesthetician">Aesthetician</button>
+              <button class="occupation-tag" data-occupation="yoga-instructor">Yoga instructor</button>
+              <button class="occupation-tag" data-occupation="flight-attendant">Flight attendant</button>
+              <button class="occupation-tag" data-occupation="doctor">Doctor</button>
+              <button class="occupation-tag" data-occupation="nurse">Nurse</button>
+              <button class="occupation-tag" data-occupation="teacher">Teacher</button>
+              <button class="occupation-tag" data-occupation="firefighter">Firefighter</button>
+              <button class="occupation-tag" data-occupation="police-officer">Police officer</button>
+              <button class="occupation-tag" data-occupation="military-personnel">Military personnel</button>
+              <button class="occupation-tag" data-occupation="dancer">Dancer</button>
+              <button class="occupation-tag" data-occupation="singer-musician">Singer/Musician</button>
+              <button class="occupation-tag" data-occupation="spy">Spy</button>
+              <button class="occupation-tag" data-occupation="pilot">Pilot</button>
+              <button class="occupation-tag" data-occupation="professional-athlete">Professional athlete</button>
+              <button class="occupation-tag" data-occupation="movie-star-actress">Movie star/Actress</button>
+              <button class="occupation-tag" data-occupation="photographer">Photographer</button>
+              <button class="occupation-tag" data-occupation="artist">Artist</button>
+              <button class="occupation-tag" data-occupation="scientist">Scientist</button>
+              <button class="occupation-tag" data-occupation="writer">Writer</button>
+              <button class="occupation-tag" data-occupation="lawyer">Lawyer</button>
+              <button class="occupation-tag" data-occupation="student">Student</button>
+              <button class="occupation-tag" data-occupation="personal-trainer">Personal trainer</button>
+              <button class="occupation-tag" data-occupation="kindergarten-teacher">Kindergarten teacher</button>
+              <button class="occupation-tag" data-occupation="florist">Florist</button>
+              <button class="occupation-tag" data-occupation="baker">Baker</button>
+              <button class="occupation-tag" data-occupation="jewelry-designer">Jewelry designer</button>
+              <button class="occupation-tag" data-occupation="astronaut">Astronaut</button>
+              <button class="occupation-tag" data-occupation="model">Model</button>
+              <button class="occupation-tag" data-occupation="social-worker">Social worker</button>
+            </div>
+
+            <!-- Choose Hobbies -->
+            <div class="hobbies-block">
+              <h3 class="hobbies-title">Choose Hobbies</h3>
+              <p class="hobbies-instruction">You can choose up to 3 variants</p>
+              <div class="hobby-tags">
+                <button class="hobby-tag" data-hobby="fitness">
+                  <span>Fitness</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path class="checkmark" d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="vlogging">
+                  <span>Vlogging</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="traveling">
+                  <span>Traveling</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="tourism">
+                  <span>Tourism</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="gaming">
+                  <span>Gaming</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="parties">
+                  <span>Parties</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="tv-series">
+                  <span>TV series</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="anime">
+                  <span>Anime</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="cosplay">
+                  <span>Cosplay</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="self-development">
+                  <span>Self-development</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="writing">
+                  <span>Writing</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="handicrafts">
+                  <span>Handicrafts</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="photography">
+                  <span>Photography</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="volunteering">
+                  <span>Volunteering</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="veganism">
+                  <span>Veganism</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="cars">
+                  <span>Cars</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="art">
+                  <span>Art</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="watching-netflix">
+                  <span>Watching Netflix</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="manga-anime">
+                  <span>Manga and anime</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="martial-arts">
+                  <span>Martial arts</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 7 -->
-          <div class="step" data-step="7">
-            <h2>Крок 7: Вибір мови інтерфейсу</h2>
-           
+          <div class="step" data-step="7" data-branch="real">
+            <h2>Choose Outfit</h2>
+            <div class="outfit-tags">
+              <button class="outfit-tag" data-outfit="bikini">Bikini</button>
+              <button class="outfit-tag" data-outfit="skirt">Skirt</button>
+              <button class="outfit-tag" data-outfit="cheerleader-uniform">Cheerleader uniform</button>
+              <button class="outfit-tag" data-outfit="peignoir">Peignoir</button>
+              <button class="outfit-tag" data-outfit="long-dress">Long dress</button>
+              <button class="outfit-tag" data-outfit="womens-basketball-jersey">Women's basketball jersey</button>
+              <button class="outfit-tag" data-outfit="football-uniform">Football uniform</button>
+              <button class="outfit-tag" data-outfit="tennis-outfit">Tennis outfit</button>
+              <button class="outfit-tag" data-outfit="swimsuit">Swimsuit</button>
+              <button class="outfit-tag" data-outfit="sportswear">Sportswear</button>
+              <button class="outfit-tag" data-outfit="wedding-dress">Wedding dress</button>
+              <button class="outfit-tag" data-outfit="elegant-dress">Elegant dress</button>
+              <button class="outfit-tag" data-outfit="witch-outfit">Witch outfit</button>
+              <button class="outfit-tag" data-outfit="summer-sundress">Summer sundress</button>
+              <button class="outfit-tag" data-outfit="latex-costume">Latex costume</button>
+              <button class="outfit-tag" data-outfit="school-uniform">School uniform</button>
+              <button class="outfit-tag" data-outfit="yoga-outfit">Yoga outfit</button>
+              <button class="outfit-tag" data-outfit="leather-costume">Leather costume</button>
+              <button class="outfit-tag" data-outfit="princess-dress">Princess dress</button>
+              <button class="outfit-tag" data-outfit="suit">Suit</button>
+              <button class="outfit-tag" data-outfit="angel-outfit">Angel outfit</button>
+              <button class="outfit-tag" data-outfit="womens-medieval-armor">Women's medieval armor</button>
+              <button class="outfit-tag" data-outfit="lab-coat">Lab coat</button>
+              <button class="outfit-tag" data-outfit="cowboy-hat">Cowboy hat</button>
+              <button class="outfit-tag" data-outfit="carnival-costume">Carnival costume</button>
+              <button class="outfit-tag" data-outfit="costume">Costume</button>
+              <button class="outfit-tag" data-outfit="nurse">Nurse</button>
+              <button class="outfit-tag" data-outfit="police-uniform">Police uniform</button>
+              <button class="outfit-tag" data-outfit="steampunk-costume">Steampunk costume</button>
+              <button class="outfit-tag" data-outfit="superheroine">Superheroine</button>
+              <button class="outfit-tag" data-outfit="teacher-dress">Teacher dress</button>
+              <button class="outfit-tag" data-outfit="viking-outfit">Viking outfit</button>
+              <button class="outfit-tag" data-outfit="firefighter-uniform">Firefighter uniform</button>
+              <button class="outfit-tag" data-outfit="military-uniform">Military uniform</button>
+              <button class="outfit-tag" data-outfit="construction-costume">Construction costume</button>
+              <button class="outfit-tag" data-outfit="long-cloak">Long cloak</button>
+              <button class="outfit-tag" data-outfit="hoodie">Hoodie</button>
+              <button class="outfit-tag" data-outfit="jeans">Jeans</button>
+              <button class="outfit-tag" data-outfit="underwear">Underwear</button>
+              <button class="outfit-tag" data-outfit="ninja-costume">Ninja costume</button>
+              <button class="outfit-tag" data-outfit="pajamas">Pajamas</button>
+              <button class="outfit-tag" data-outfit="clown-costume">Clown costume</button>
+              <button class="outfit-tag" data-outfit="flight-attendant-uniform">Flight attendant uniform</button>
+              <button class="outfit-tag" data-outfit="barista-uniform">Barista uniform</button>
+              <button class="outfit-tag" data-outfit="belly-dancer-costume">Belly dancer costume</button>
+              <button class="outfit-tag" data-outfit="goth-outfit">Goth outfit</button>
+              <button class="outfit-tag" data-outfit="pirate-costume">Pirate costume</button>
+              <button class="outfit-tag" data-outfit="prisoner-uniform">Prisoner uniform</button>
+              <button class="outfit-tag" data-outfit="racer-uniform">Racer uniform</button>
+              <button class="outfit-tag" data-outfit="hijab">Hijab</button>
+              <button class="outfit-tag" data-outfit="tutu">Tutu</button>
+              <button class="outfit-tag" data-outfit="poncho">Poncho</button>
+              <button class="outfit-tag" data-outfit="hip-hop-costume">Hip-hop costume</button>
+              <button class="outfit-tag" data-outfit="skate-park-outfit">Skate park outfit</button>
+              <button class="outfit-tag" data-outfit="adventurer">Adventurer</button>
+              <button class="outfit-tag" data-outfit="sailor-uniform">Sailor uniform</button>
+              <button class="outfit-tag" data-outfit="golf-outfit">Golf outfit</button>
+              <button class="outfit-tag" data-outfit="jumpsuit">Jumpsuit</button>
+              <button class="outfit-tag" data-outfit="oversized">Oversized</button>
+              <button class="outfit-tag" data-outfit="tribal-costume">Tribal costume</button>
+              <button class="outfit-tag" data-outfit="secretary-uniform">Secretary uniform</button>
+              <button class="outfit-tag" data-outfit="pop-star">Pop star</button>
+            </div>
           </div>
 
-          <!-- Step 8 -->
-          <div class="step" data-step="8">
-            <h2>Крок 8: Додаткові опції</h2>
-           
+          <div class="step" data-step="8" data-branch="real">
+            <h2>Choose Relationship</h2>
+            <div class="relationship-cards">
+              <div class="relationship-card" data-relationship="stranger">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">👽</div>
+                <div class="relationship-label">Stranger</div>
+              </div>
+              <div class="relationship-card" data-relationship="school-mate">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🎓</div>
+                <div class="relationship-label">School Mate</div>
+              </div>
+              <div class="relationship-card" data-relationship="colleague">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">💼</div>
+                <div class="relationship-label">Colleague</div>
+              </div>
+              <div class="relationship-card" data-relationship="mentor">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">📚</div>
+                <div class="relationship-label">Mentor</div>
+              </div>
+              <div class="relationship-card" data-relationship="sex-friend">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🚫</div>
+                <div class="relationship-label">Sex Friend</div>
+              </div>
+              <div class="relationship-card" data-relationship="wife">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">💍</div>
+                <div class="relationship-label">Wife</div>
+              </div>
+              <div class="relationship-card" data-relationship="mistress">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">👑</div>
+                <div class="relationship-label">Mistress</div>
+              </div>
+              <div class="relationship-card" data-relationship="friend">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">👋</div>
+                <div class="relationship-label">Friend</div>
+              </div>
+              <div class="relationship-card" data-relationship="best-friend">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🤝</div>
+                <div class="relationship-label">Best Friend</div>
+              </div>
+              <div class="relationship-card" data-relationship="step-sister">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🍑</div>
+                <div class="relationship-label">Step Sister</div>
+              </div>
+              <div class="relationship-card" data-relationship="step-mom">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">💋</div>
+                <div class="relationship-label">Step Mom</div>
+              </div>
+            </div>
           </div>
 
-          <!-- Step 9 -->
-          <div class="step" data-step="9">
-            <h2>Крок 9: Контактна інформація</h2>
-          
+          <div class="step" data-step="9" data-branch="real">
+            <h2>Summary</h2>
+            <div class="summary-container">
+              <!-- Row 1 -->
+              <div class="summary-section">
+                <div class="summary-category">Style</div>
+                <div class="summary-card" data-edit-step="1">
+                  <div class="summary-edit-icon">✏️</div>
+                  <video class="summary-video" id="summary-style-video" autoplay loop muted playsinline style="display: none;">
+                    <source src="" type="video/mp4">
+                  </video>
+                  <div class="summary-value" id="summary-style">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Ethnicity</div>
+                <div class="summary-card" data-edit-step="2">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-ethnicity-image" src="" alt="">
+                  <div class="summary-value" id="summary-ethnicity">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Age</div>
+                <div class="summary-card" data-edit-step="2">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-value" id="summary-age">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 2 -->
+              <div class="summary-section">
+                <div class="summary-category">Eyes Color</div>
+                <div class="summary-card summary-card-eyes" data-edit-step="2">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image-small" id="summary-eyes-image" src="" alt="">
+                  <div class="summary-value" id="summary-eyes">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Hair Style</div>
+                <div class="summary-card" data-edit-step="3">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-hairstyle-image" src="" alt="">
+                  <div class="summary-value" id="summary-hairstyle">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Hair Color</div>
+                <div class="summary-card" data-edit-step="3">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-color-swatch" id="summary-hair-color-swatch"></div>
+                  <div class="summary-value" id="summary-hair-color">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 3 -->
+              <div class="summary-section">
+                <div class="summary-category">Body Type</div>
+                <div class="summary-card" data-edit-step="4">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-body-type-image" src="" alt="">
+                  <div class="summary-value" id="summary-body-type">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Breast Size</div>
+                <div class="summary-card" data-edit-step="4">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-breast-size-image" src="" alt="">
+                  <div class="summary-value" id="summary-breast-size">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Butt Type</div>
+                <div class="summary-card" data-edit-step="4">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-butt-type-image" src="" alt="">
+                  <div class="summary-value" id="summary-butt-type">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 4 -->
+              <div class="summary-section">
+                <div class="summary-category">Personality</div>
+                <div class="summary-card" data-edit-step="5">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-emoji" id="summary-personality-emoji"></div>
+                  <div class="summary-value" id="summary-personality">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Relationship</div>
+                <div class="summary-card" data-edit-step="8">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-emoji" id="summary-relationship-emoji"></div>
+                  <div class="summary-value" id="summary-relationship">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Occupation</div>
+                <div class="summary-card" data-edit-step="6">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-value" id="summary-occupation">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 5 -->
+              <div class="summary-section summary-section-full">
+                <div class="summary-category">Hobbies</div>
+                <div class="summary-tags-container" id="summary-hobbies" data-edit-step="6">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-tags"></div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Clothing</div>
+                <div class="summary-card" data-edit-step="7">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-value" id="summary-outfit">-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anime Branch Steps (2-9) -->
+          <div class="step" data-step="2" data-branch="anime">
+            <h2>Choose Ethnicity</h2>
+            <div class="ethnicity-cards" data-branch="anime">
+              <div class="ethnicity-card" data-ethnicity="european">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="European" class="ethnicity-image">
+                <div class="ethnicity-label">European</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="latin">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Latin" class="ethnicity-image">
+                <div class="ethnicity-label">Latin</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="asian">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Asian" class="ethnicity-image">
+                <div class="ethnicity-label">Asian</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="arab">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Arab" class="ethnicity-image">
+                <div class="ethnicity-label">Arab</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="afro">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Afro" class="ethnicity-image">
+                <div class="ethnicity-label">Afro</div>
+              </div>
+              <div class="ethnicity-card" data-ethnicity="indian">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Indian" class="ethnicity-image">
+                <div class="ethnicity-label">Indian</div>
+              </div>
+            </div>
+
+            <!-- Choose Age -->
+            <div class="selection-group">
+              <h3 class="selection-title">Choose Age</h3>
+              <div class="age-buttons">
+                <button class="age-btn" data-age="18-20">18-20</button>
+                <button class="age-btn" data-age="20-30">20-30</button>
+                <button class="age-btn" data-age="30-40">30-40</button>
+                <button class="age-btn" data-age="40-50">40-50</button>
+              </div>
+            </div>
+
+            <!-- Choose Eyes Color -->
+            <div class="selection-group">
+              <h3 class="selection-title">Choose Eyes Color</h3>
+              <div class="eyes-buttons">
+                <button class="eyes-btn" data-eyes="brown">
+                  <img src="src/images/configurator/step2/eye_brown.b32db38c228bf33e522a.png" alt="Brown" class="eyes-icon">
+                  <span>Brown</span>
+                </button>
+                <button class="eyes-btn" data-eyes="blue">
+                  <img src="src/images/configurator/step2/eye_blue.7fb4eea3244b29a3ce17.png" alt="Blue" class="eyes-icon">
+                  <span>Blue</span>
+                </button>
+                <button class="eyes-btn" data-eyes="green">
+                  <img src="src/images/configurator/step2/eye_green.c1a40762110a4113c764.png" alt="Green" class="eyes-icon">
+                  <span>Green</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3" data-branch="anime">
+            <h2>Choose Hairstyle</h2>
+            <div class="ethnicity-cards" data-branch="anime">
+              <div class="ethnicity-card" data-hairstyle="bangs">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Bangs" class="ethnicity-image">
+                <div class="ethnicity-label">Bangs</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="braids">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Braids" class="ethnicity-image">
+                <div class="ethnicity-label">Braids</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="bun">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Bun" class="ethnicity-image">
+                <div class="ethnicity-label">Bun</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="curly">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Curly" class="ethnicity-image">
+                <div class="ethnicity-label">Curly</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="long">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Long" class="ethnicity-image">
+                <div class="ethnicity-label">Long</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="ponytail">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Ponytail" class="ethnicity-image">
+                <div class="ethnicity-label">Ponytail</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="short">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Short" class="ethnicity-image">
+                <div class="ethnicity-label">Short</div>
+              </div>
+              <div class="ethnicity-card" data-hairstyle="straight">
+                <div class="ethnicity-card-checkbox"></div>
+                <img src="" alt="Straight" class="ethnicity-image">
+                <div class="ethnicity-label">Straight</div>
+              </div>
+            </div>
+
+            <!-- Choose Hair Color -->
+            <div class="selection-group">
+              <h3 class="selection-title">Choose Hair Color</h3>
+              <div class="hair-color-buttons">
+                <button class="hair-color-btn" data-hair-color="blond">
+                  <span class="hair-color-swatch" style="background-color: #E8E3D7;"></span>
+                  <span>Blond</span>
+                </button>
+                <button class="hair-color-btn" data-hair-color="brunette">
+                  <span class="hair-color-swatch" style="background-color: #7A4A3B;"></span>
+                  <span>Brunette</span>
+                </button>
+                <button class="hair-color-btn" data-hair-color="black">
+                  <span class="hair-color-swatch" style="background-color: #000000;"></span>
+                  <span>Black</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="4" data-branch="anime">
+            <!-- Block 1: Body Type -->
+            <div class="card-block">
+              <h3 class="block-title">Choose Body Type</h3>
+              <div class="ethnicity-cards" data-block="1">
+                <div class="ethnicity-card" data-block="1" data-option="athletic">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Athletic" class="ethnicity-image">
+                  <div class="ethnicity-label">Athletic</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="curvy">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Curvy" class="ethnicity-image">
+                  <div class="ethnicity-label">Curvy</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="muscular">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Muscular" class="ethnicity-image">
+                  <div class="ethnicity-label">Muscular</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="petite">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Petite" class="ethnicity-image">
+                  <div class="ethnicity-label">Petite</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="slim">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Slim" class="ethnicity-image">
+                  <div class="ethnicity-label">Slim</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="voluptuous">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Voluptuous" class="ethnicity-image">
+                  <div class="ethnicity-label">Voluptuous</div>
+                </div>
+                <div class="ethnicity-card" data-block="1" data-option="wide">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Wide" class="ethnicity-image">
+                  <div class="ethnicity-label">Wide</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="card-block">
+              <h3 class="block-title">Choose Breast Size</h3>
+              <div class="ethnicity-cards" data-block="2">
+                <div class="ethnicity-card" data-block="2" data-option="flat">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Flat" class="ethnicity-image">
+                  <div class="ethnicity-label">Flat</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="small">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Small" class="ethnicity-image">
+                  <div class="ethnicity-label">Small</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="medium">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Medium" class="ethnicity-image">
+                  <div class="ethnicity-label">Medium</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="large">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Large" class="ethnicity-image">
+                  <div class="ethnicity-label">Large</div>
+                </div>
+                <div class="ethnicity-card" data-block="2" data-option="huge">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Huge" class="ethnicity-image">
+                  <div class="ethnicity-label">Huge</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="card-block">
+              <h3 class="block-title">Choose Butt Type</h3>
+              <div class="ethnicity-cards" data-block="3">
+                <div class="ethnicity-card" data-block="3" data-option="skinny">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Skinny" class="ethnicity-image">
+                  <div class="ethnicity-label">Skinny</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="small">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Small" class="ethnicity-image">
+                  <div class="ethnicity-label">Small</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="medium">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Medium" class="ethnicity-image">
+                  <div class="ethnicity-label">Medium</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="athletic">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Athletic" class="ethnicity-image">
+                  <div class="ethnicity-label">Athletic</div>
+                </div>
+                <div class="ethnicity-card" data-block="3" data-option="huge">
+                  <div class="ethnicity-card-checkbox"></div>
+                  <img src="" alt="Huge" class="ethnicity-image">
+                  <div class="ethnicity-label">Huge</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="5" data-branch="anime">
+            <h2>Choose Personality</h2>
+            <div class="personality-cards">
+              <div class="personality-card" data-personality="caregiver">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">👩‍🦳</div>
+                <div class="personality-content">
+                  <div class="personality-title">Caregiver</div>
+                  <div class="personality-description">Nurturing, protective, and always there to offer comfort.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="innocent">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">😇</div>
+                <div class="personality-content">
+                  <div class="personality-title">Innocent</div>
+                  <div class="personality-description">Pure, naive, and full of wonder and optimism.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="temptress">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">💘</div>
+                <div class="personality-content">
+                  <div class="personality-title">Temptress</div>
+                  <div class="personality-description">Seductive, alluring, and irresistibly charming.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="submissive">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🥺</div>
+                <div class="personality-content">
+                  <div class="personality-title">Submissive</div>
+                  <div class="personality-description">Obedient, yielding, and eager to please.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="nympho">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🔥</div>
+                <div class="personality-content">
+                  <div class="personality-title">Nympho</div>
+                  <div class="personality-description">Passionate, insatiable, and driven by desire.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="confidant">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">😎</div>
+                <div class="personality-content">
+                  <div class="personality-title">Confidant</div>
+                  <div class="personality-description">Trustworthy, loyal, and a perfect secret keeper.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="sage">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🧠</div>
+                <div class="personality-content">
+                  <div class="personality-title">Sage</div>
+                  <div class="personality-description">Wise, thoughtful, and always seeking knowledge.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="jester">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">🤡</div>
+                <div class="personality-content">
+                  <div class="personality-title">Jester</div>
+                  <div class="personality-description">Playful, humorous, and always ready to entertain.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="dominant">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">👑</div>
+                <div class="personality-content">
+                  <div class="personality-title">Dominant</div>
+                  <div class="personality-description">Commanding, assertive, and in control.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="lover">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">💕</div>
+                <div class="personality-content">
+                  <div class="personality-title">Lover</div>
+                  <div class="personality-description">Romantic, affectionate, and deeply emotional.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="mean">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">❄️</div>
+                <div class="personality-content">
+                  <div class="personality-title">Mean</div>
+                  <div class="personality-description">Cold, harsh, and unapologetically direct.</div>
+                </div>
+              </div>
+              <div class="personality-card" data-personality="experimenter">
+                <div class="personality-checkbox"></div>
+                <div class="personality-emoji">💡</div>
+                <div class="personality-content">
+                  <div class="personality-title">Experimenter</div>
+                  <div class="personality-description">Curious, innovative, and always trying something new.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6" data-branch="anime">
+            <h2>Choose Occupation</h2>
+            <div class="occupation-tags">
+              <button class="occupation-tag" data-occupation="massage-therapist">Massage therapist</button>
+              <button class="occupation-tag" data-occupation="dentist">Dentist</button>
+              <button class="occupation-tag" data-occupation="fitness-trainer">Fitness trainer</button>
+              <button class="occupation-tag" data-occupation="pharmacist">Pharmacist</button>
+              <button class="occupation-tag" data-occupation="hairdresser">Hairdresser</button>
+              <button class="occupation-tag" data-occupation="makeup-artist">Makeup artist</button>
+              <button class="occupation-tag" data-occupation="gynecologist">Gynecologist</button>
+              <button class="occupation-tag" data-occupation="librarian">Librarian</button>
+              <button class="occupation-tag" data-occupation="secretary">Secretary</button>
+              <button class="occupation-tag" data-occupation="fashion-designer">Fashion designer</button>
+              <button class="occupation-tag" data-occupation="interior-designer">Interior designer</button>
+              <button class="occupation-tag" data-occupation="chef">Chef</button>
+              <button class="occupation-tag" data-occupation="designer">Designer</button>
+              <button class="occupation-tag" data-occupation="stylist">Stylist</button>
+              <button class="occupation-tag" data-occupation="aesthetician">Aesthetician</button>
+              <button class="occupation-tag" data-occupation="yoga-instructor">Yoga instructor</button>
+              <button class="occupation-tag" data-occupation="flight-attendant">Flight attendant</button>
+              <button class="occupation-tag" data-occupation="doctor">Doctor</button>
+              <button class="occupation-tag" data-occupation="nurse">Nurse</button>
+              <button class="occupation-tag" data-occupation="teacher">Teacher</button>
+              <button class="occupation-tag" data-occupation="firefighter">Firefighter</button>
+              <button class="occupation-tag" data-occupation="police-officer">Police officer</button>
+              <button class="occupation-tag" data-occupation="military-personnel">Military personnel</button>
+              <button class="occupation-tag" data-occupation="dancer">Dancer</button>
+              <button class="occupation-tag" data-occupation="singer-musician">Singer/Musician</button>
+              <button class="occupation-tag" data-occupation="spy">Spy</button>
+              <button class="occupation-tag" data-occupation="pilot">Pilot</button>
+              <button class="occupation-tag" data-occupation="professional-athlete">Professional athlete</button>
+              <button class="occupation-tag" data-occupation="movie-star-actress">Movie star/Actress</button>
+              <button class="occupation-tag" data-occupation="photographer">Photographer</button>
+              <button class="occupation-tag" data-occupation="artist">Artist</button>
+              <button class="occupation-tag" data-occupation="scientist">Scientist</button>
+              <button class="occupation-tag" data-occupation="writer">Writer</button>
+              <button class="occupation-tag" data-occupation="lawyer">Lawyer</button>
+              <button class="occupation-tag" data-occupation="student">Student</button>
+              <button class="occupation-tag" data-occupation="personal-trainer">Personal trainer</button>
+              <button class="occupation-tag" data-occupation="kindergarten-teacher">Kindergarten teacher</button>
+              <button class="occupation-tag" data-occupation="florist">Florist</button>
+              <button class="occupation-tag" data-occupation="baker">Baker</button>
+              <button class="occupation-tag" data-occupation="jewelry-designer">Jewelry designer</button>
+              <button class="occupation-tag" data-occupation="astronaut">Astronaut</button>
+              <button class="occupation-tag" data-occupation="model">Model</button>
+              <button class="occupation-tag" data-occupation="social-worker">Social worker</button>
+            </div>
+
+            <!-- Choose Hobbies -->
+            <div class="hobbies-block">
+              <h3 class="hobbies-title">Choose Hobbies</h3>
+              <p class="hobbies-instruction">You can choose up to 3 variants</p>
+              <div class="hobby-tags">
+                <button class="hobby-tag" data-hobby="fitness">
+                  <span>Fitness</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path class="checkmark" d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="vlogging">
+                  <span>Vlogging</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="traveling">
+                  <span>Traveling</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="tourism">
+                  <span>Tourism</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="gaming">
+                  <span>Gaming</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="parties">
+                  <span>Parties</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="tv-series">
+                  <span>TV series</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="anime">
+                  <span>Anime</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="cosplay">
+                  <span>Cosplay</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="self-development">
+                  <span>Self-development</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="writing">
+                  <span>Writing</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="handicrafts">
+                  <span>Handicrafts</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="photography">
+                  <span>Photography</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="volunteering">
+                  <span>Volunteering</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="veganism">
+                  <span>Veganism</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="cars">
+                  <span>Cars</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="art">
+                  <span>Art</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="watching-netflix">
+                  <span>Watching Netflix</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="manga-anime">
+                  <span>Manga and anime</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+                <button class="hobby-tag" data-hobby="martial-arts">
+                  <span>Martial arts</span>
+                  <svg class="hobby-checkbox" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="7" data-branch="anime">
+            <h2>Choose Outfit</h2>
+            <div class="outfit-tags">
+              <button class="outfit-tag" data-outfit="bikini">Bikini</button>
+              <button class="outfit-tag" data-outfit="skirt">Skirt</button>
+              <button class="outfit-tag" data-outfit="cheerleader-uniform">Cheerleader uniform</button>
+              <button class="outfit-tag" data-outfit="peignoir">Peignoir</button>
+              <button class="outfit-tag" data-outfit="long-dress">Long dress</button>
+              <button class="outfit-tag" data-outfit="womens-basketball-jersey">Women's basketball jersey</button>
+              <button class="outfit-tag" data-outfit="football-uniform">Football uniform</button>
+              <button class="outfit-tag" data-outfit="tennis-outfit">Tennis outfit</button>
+              <button class="outfit-tag" data-outfit="swimsuit">Swimsuit</button>
+              <button class="outfit-tag" data-outfit="sportswear">Sportswear</button>
+              <button class="outfit-tag" data-outfit="wedding-dress">Wedding dress</button>
+              <button class="outfit-tag" data-outfit="elegant-dress">Elegant dress</button>
+              <button class="outfit-tag" data-outfit="witch-outfit">Witch outfit</button>
+              <button class="outfit-tag" data-outfit="summer-sundress">Summer sundress</button>
+              <button class="outfit-tag" data-outfit="latex-costume">Latex costume</button>
+              <button class="outfit-tag" data-outfit="school-uniform">School uniform</button>
+              <button class="outfit-tag" data-outfit="yoga-outfit">Yoga outfit</button>
+              <button class="outfit-tag" data-outfit="leather-costume">Leather costume</button>
+              <button class="outfit-tag" data-outfit="princess-dress">Princess dress</button>
+              <button class="outfit-tag" data-outfit="suit">Suit</button>
+              <button class="outfit-tag" data-outfit="angel-outfit">Angel outfit</button>
+              <button class="outfit-tag" data-outfit="womens-medieval-armor">Women's medieval armor</button>
+              <button class="outfit-tag" data-outfit="lab-coat">Lab coat</button>
+              <button class="outfit-tag" data-outfit="cowboy-hat">Cowboy hat</button>
+              <button class="outfit-tag" data-outfit="carnival-costume">Carnival costume</button>
+              <button class="outfit-tag" data-outfit="costume">Costume</button>
+              <button class="outfit-tag" data-outfit="nurse">Nurse</button>
+              <button class="outfit-tag" data-outfit="police-uniform">Police uniform</button>
+              <button class="outfit-tag" data-outfit="steampunk-costume">Steampunk costume</button>
+              <button class="outfit-tag" data-outfit="superheroine">Superheroine</button>
+              <button class="outfit-tag" data-outfit="teacher-dress">Teacher dress</button>
+              <button class="outfit-tag" data-outfit="viking-outfit">Viking outfit</button>
+              <button class="outfit-tag" data-outfit="firefighter-uniform">Firefighter uniform</button>
+              <button class="outfit-tag" data-outfit="military-uniform">Military uniform</button>
+              <button class="outfit-tag" data-outfit="construction-costume">Construction costume</button>
+              <button class="outfit-tag" data-outfit="long-cloak">Long cloak</button>
+              <button class="outfit-tag" data-outfit="hoodie">Hoodie</button>
+              <button class="outfit-tag" data-outfit="jeans">Jeans</button>
+              <button class="outfit-tag" data-outfit="underwear">Underwear</button>
+              <button class="outfit-tag" data-outfit="ninja-costume">Ninja costume</button>
+              <button class="outfit-tag" data-outfit="pajamas">Pajamas</button>
+              <button class="outfit-tag" data-outfit="clown-costume">Clown costume</button>
+              <button class="outfit-tag" data-outfit="flight-attendant-uniform">Flight attendant uniform</button>
+              <button class="outfit-tag" data-outfit="barista-uniform">Barista uniform</button>
+              <button class="outfit-tag" data-outfit="belly-dancer-costume">Belly dancer costume</button>
+              <button class="outfit-tag" data-outfit="goth-outfit">Goth outfit</button>
+              <button class="outfit-tag" data-outfit="pirate-costume">Pirate costume</button>
+              <button class="outfit-tag" data-outfit="prisoner-uniform">Prisoner uniform</button>
+              <button class="outfit-tag" data-outfit="racer-uniform">Racer uniform</button>
+              <button class="outfit-tag" data-outfit="hijab">Hijab</button>
+              <button class="outfit-tag" data-outfit="tutu">Tutu</button>
+              <button class="outfit-tag" data-outfit="poncho">Poncho</button>
+              <button class="outfit-tag" data-outfit="hip-hop-costume">Hip-hop costume</button>
+              <button class="outfit-tag" data-outfit="skate-park-outfit">Skate park outfit</button>
+              <button class="outfit-tag" data-outfit="adventurer">Adventurer</button>
+              <button class="outfit-tag" data-outfit="sailor-uniform">Sailor uniform</button>
+              <button class="outfit-tag" data-outfit="golf-outfit">Golf outfit</button>
+              <button class="outfit-tag" data-outfit="jumpsuit">Jumpsuit</button>
+              <button class="outfit-tag" data-outfit="oversized">Oversized</button>
+              <button class="outfit-tag" data-outfit="tribal-costume">Tribal costume</button>
+              <button class="outfit-tag" data-outfit="secretary-uniform">Secretary uniform</button>
+              <button class="outfit-tag" data-outfit="pop-star">Pop star</button>
+            </div>
+          </div>
+
+          <div class="step" data-step="8" data-branch="anime">
+            <h2>Choose Relationship</h2>
+            <div class="relationship-cards">
+              <div class="relationship-card" data-relationship="stranger">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">👽</div>
+                <div class="relationship-label">Stranger</div>
+              </div>
+              <div class="relationship-card" data-relationship="school-mate">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🎓</div>
+                <div class="relationship-label">School Mate</div>
+              </div>
+              <div class="relationship-card" data-relationship="colleague">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">💼</div>
+                <div class="relationship-label">Colleague</div>
+              </div>
+              <div class="relationship-card" data-relationship="mentor">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">📚</div>
+                <div class="relationship-label">Mentor</div>
+              </div>
+              <div class="relationship-card" data-relationship="sex-friend">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🚫</div>
+                <div class="relationship-label">Sex Friend</div>
+              </div>
+              <div class="relationship-card" data-relationship="wife">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">💍</div>
+                <div class="relationship-label">Wife</div>
+              </div>
+              <div class="relationship-card" data-relationship="mistress">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">👑</div>
+                <div class="relationship-label">Mistress</div>
+              </div>
+              <div class="relationship-card" data-relationship="friend">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">👋</div>
+                <div class="relationship-label">Friend</div>
+              </div>
+              <div class="relationship-card" data-relationship="best-friend">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🤝</div>
+                <div class="relationship-label">Best Friend</div>
+              </div>
+              <div class="relationship-card" data-relationship="step-sister">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">🍑</div>
+                <div class="relationship-label">Step Sister</div>
+              </div>
+              <div class="relationship-card" data-relationship="step-mom">
+                <div class="relationship-checkbox"></div>
+                <div class="relationship-emoji">💋</div>
+                <div class="relationship-label">Step Mom</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="9" data-branch="anime">
+            <h2>Summary</h2>
+            <div class="summary-container">
+              <!-- Row 1 -->
+              <div class="summary-section">
+                <div class="summary-category">Style</div>
+                <div class="summary-card" data-edit-step="1">
+                  <div class="summary-edit-icon">✏️</div>
+                  <video class="summary-video" id="summary-style-video" autoplay loop muted playsinline style="display: none;">
+                    <source src="" type="video/mp4">
+                  </video>
+                  <div class="summary-value" id="summary-style">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Ethnicity</div>
+                <div class="summary-card" data-edit-step="2">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-ethnicity-image" src="" alt="">
+                  <div class="summary-value" id="summary-ethnicity">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Age</div>
+                <div class="summary-card" data-edit-step="2">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-value" id="summary-age">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 2 -->
+              <div class="summary-section">
+                <div class="summary-category">Eyes Color</div>
+                <div class="summary-card summary-card-eyes" data-edit-step="2">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image-small" id="summary-eyes-image" src="" alt="">
+                  <div class="summary-value" id="summary-eyes">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Hair Style</div>
+                <div class="summary-card" data-edit-step="3">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-hairstyle-image" src="" alt="">
+                  <div class="summary-value" id="summary-hairstyle">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Hair Color</div>
+                <div class="summary-card" data-edit-step="3">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-color-swatch" id="summary-hair-color-swatch"></div>
+                  <div class="summary-value" id="summary-hair-color">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 3 -->
+              <div class="summary-section">
+                <div class="summary-category">Body Type</div>
+                <div class="summary-card" data-edit-step="4">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-body-type-image" src="" alt="">
+                  <div class="summary-value" id="summary-body-type">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Breast Size</div>
+                <div class="summary-card" data-edit-step="4">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-breast-size-image" src="" alt="">
+                  <div class="summary-value" id="summary-breast-size">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Butt Type</div>
+                <div class="summary-card" data-edit-step="4">
+                  <div class="summary-edit-icon">✏️</div>
+                  <img class="summary-image" id="summary-butt-type-image" src="" alt="">
+                  <div class="summary-value" id="summary-butt-type">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 4 -->
+              <div class="summary-section">
+                <div class="summary-category">Personality</div>
+                <div class="summary-card" data-edit-step="5">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-emoji" id="summary-personality-emoji"></div>
+                  <div class="summary-value" id="summary-personality">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Relationship</div>
+                <div class="summary-card" data-edit-step="8">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-emoji" id="summary-relationship-emoji"></div>
+                  <div class="summary-value" id="summary-relationship">-</div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Occupation</div>
+                <div class="summary-card" data-edit-step="6">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-value" id="summary-occupation">-</div>
+                </div>
+              </div>
+              
+              <!-- Row 5 -->
+              <div class="summary-section summary-section-full">
+                <div class="summary-category">Hobbies</div>
+                <div class="summary-tags-container" id="summary-hobbies" data-edit-step="6">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-tags"></div>
+                </div>
+              </div>
+              
+              <div class="summary-section">
+                <div class="summary-category">Clothing</div>
+                <div class="summary-card" data-edit-step="7">
+                  <div class="summary-edit-icon">✏️</div>
+                  <div class="summary-value" id="summary-outfit">-</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Navigation buttons -->
         <div class="navigation-buttons">
-          <button class="btn btn-secondary" id="prev-btn" disabled>Назад</button>
-          <button class="btn btn-primary" id="next-btn">Вперед</button>
-          <button class="btn btn-success" id="submit-btn" style="display: none;">Завершити</button>
+          <button class="btn btn-secondary" id="prev-btn" disabled>Back</button>
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <a href="#" class="btn btn-success" id="submit-btn" style="display: none;">
+            Bring my AI to life
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none" class="injected-svg" data-src="/static/media/magic_wand.17a884040001d107854ed952537d859c.svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1026 7.21988L15.2975 5.56965C15.6602 5.06866 15.8416 4.81817 15.9197 4.56675C16.0684 4.08841 15.9851 3.56807 15.6945 3.16003C15.5418 2.94557 15.2913 2.76421 14.7904 2.40147L14.7903 2.40147L14.7903 2.40146C14.2894 2.03873 14.0389 1.85736 13.7874 1.77922C13.3091 1.63054 12.7888 1.71382 12.3807 2.00438C12.1663 2.1571 11.9849 2.40759 11.6222 2.90858L10.412 4.57992C11.3848 5.76499 12.6572 6.67866 14.1026 7.21988ZM9.44446 5.91628L3.69369 13.8589C3.3865 14.2831 3.2329 14.4953 3.15638 14.7043C2.96479 15.2275 3.05847 15.8128 3.40383 16.2501C3.54176 16.4247 3.75391 16.5783 4.1782 16.8855C4.75599 17.3039 5.04489 17.5131 5.33958 17.5889C5.77086 17.6999 6.22885 17.6266 6.60396 17.3865C6.86026 17.2225 7.06944 16.9336 7.4878 16.3558L13.1325 8.55974C11.7193 7.96099 10.4601 7.05597 9.44446 5.91628Z" fill="white"></path>
+                <path d="M6.13736 4.10597L6.13736 4.10598C6.21868 4.34992 6.25934 4.47189 6.3 4.52509C6.46052 4.7351 6.77676 4.7351 6.93728 4.52509C6.97795 4.47189 7.0186 4.34992 7.09992 4.10598L7.09992 4.10597C7.16551 3.90919 7.19831 3.8108 7.24073 3.72175C7.39903 3.38945 7.66679 3.12169 7.99909 2.96339C8.08815 2.92096 8.18654 2.88817 8.38332 2.82257L8.38332 2.82257C8.62726 2.74126 8.74923 2.7006 8.80243 2.65994C9.01244 2.49941 9.01244 2.18318 8.80243 2.02266C8.74923 1.98199 8.62726 1.94133 8.38332 1.86002L8.38332 1.86002C8.18654 1.79443 8.08815 1.76163 7.99909 1.71921C7.66679 1.5609 7.39903 1.29315 7.24073 0.960846C7.19831 0.871789 7.16551 0.773399 7.09992 0.576618C7.0186 0.332678 6.97795 0.210707 6.93728 0.157504C6.77676 -0.0525015 6.46052 -0.0525015 6.3 0.157504C6.25934 0.210707 6.21868 0.332677 6.13736 0.576618C6.07177 0.773399 6.03897 0.871789 5.99655 0.960846C5.83825 1.29315 5.57049 1.5609 5.23819 1.71921C5.14913 1.76163 5.05074 1.79443 4.85396 1.86002C4.61002 1.94133 4.48805 1.98199 4.43485 2.02266C4.22484 2.18318 4.22484 2.49941 4.43485 2.65994C4.48805 2.7006 4.61002 2.74126 4.85396 2.82257C5.05074 2.88817 5.14913 2.92096 5.23819 2.96339C5.57049 3.12169 5.83825 3.38945 5.99655 3.72175C6.03897 3.8108 6.07177 3.90919 6.13736 4.10597Z" fill="white"></path>
+                <path d="M15.7219 9.12114C16.1763 9.27263 16.533 9.62924 16.6844 10.0837C16.8001 10.4306 17.2907 10.4306 17.4064 10.0837C17.5578 9.62924 17.9145 9.27263 18.3689 9.12114C18.7158 9.00552 18.7158 8.51486 18.3689 8.39923C17.9145 8.24774 17.5578 7.89113 17.4064 7.43668C17.2907 7.08979 16.8001 7.08979 16.6844 7.43668C16.533 7.89113 16.1763 8.24774 15.7219 8.39923C15.375 8.51486 15.375 9.00552 15.7219 9.12114Z" fill="white"></path>
+                <path d="M12.9539 12.2089C13.2569 12.3099 13.4946 12.5476 13.5956 12.8506C13.6727 13.0819 13.9998 13.0819 14.0769 12.8506C14.1779 12.5476 14.4156 12.3099 14.7186 12.2089C14.9498 12.1318 14.9498 11.8047 14.7186 11.7276C14.4156 11.6266 14.1779 11.3889 14.0769 11.0859C13.9998 10.8547 13.6727 10.8547 13.5956 11.0859C13.4946 11.3889 13.2569 11.6266 12.9539 11.7276C12.7226 11.8047 12.7226 12.1318 12.9539 12.2089Z" fill="white"></path>
+                </svg>
+            </span>
+          </a>
         </div>
       </div>
     </main>
 
     <footer>
-      <p>&copy; 2024 CherryX. Всі права захищені.</p>
     </footer>
 
     <script src="src/js/configurator.js"></script>
